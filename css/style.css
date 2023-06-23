@@ -52,6 +52,7 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    z-index: 3;
 
 }
 
@@ -84,6 +85,7 @@ main {
 .photo img {
     width: 100%;
     transition: 0.5s;
+    filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.75));
 }
 
 .photo h1 {
@@ -91,6 +93,8 @@ main {
     font-size: 40px;
     text-align: center;
     color: #fafafa;
+    text-transform: uppercase;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, .75);
 }
 
 footer {
@@ -101,4 +105,50 @@ footer {
     justify-content: center;
     align-items: center;
     color: #fafafa;
+}
+
+.fog {
+    height: 450px;
+    width: 100%;
+    background-image: url(../assets/fog.webp);
+    position: fixed;
+    bottom: 0px;
+    animation: fog;
+    animation-duration: 45s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    z-index: 1;
+}
+
+@keyframes fog {
+    from {
+        background-position: right;
+    }
+
+    to {
+        background-position: left;
+    }
+}
+
+.morefog {
+    height: 450px;
+    width: 100%;
+    background-image: url(../assets/fog.webp);
+    position: fixed;
+    bottom: 0px;
+    animation: morefog;
+    animation-duration: 45s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    z-index: 2;
+}
+
+@keyframes morefog {
+    from {
+        background-position: left;
+    }
+
+    to {
+        background-position: right;
+    }
 }
